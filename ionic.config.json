@@ -1,0 +1,7 @@
+{
+  "name": "FrontendAssemble",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
