@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Assemble
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="addGroup()" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="groups" *ngFor="let group of groups">
+    <div class="group" (click)="openRoom(group.id)">
+      <!-- Image Here  -->
+      <div class="text">
+        <p class="title">{{group.title}}</p>
+        <p class="subtitle">{{group.subtitle}}</p>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

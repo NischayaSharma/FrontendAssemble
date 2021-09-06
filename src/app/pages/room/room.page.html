@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Room</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="rooms" *ngFor="let room of rooms">
+    <div class="room" (click)="openActivity(room.id)" >
+      <div class="text">
+        <p class="title">{{room.title}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
