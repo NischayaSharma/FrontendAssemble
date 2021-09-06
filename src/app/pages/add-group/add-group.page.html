@@ -1,14 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-back-button defaultHref="/group" slot="start"></ion-back-button>
+  <ion-toolbar mode="ios">
+    <ion-button slot="start" fill="clear" color="dark" (click)="backPressed()">
+      <ion-icon name="chevron-back-outline"></ion-icon> Back
+    </ion-button>
     <ion-title>Add Group</ion-title>
-    <ion-button slot="end" fill="clear" color="dark">
-      Next <ion-icon name="chevron-forward-outline"></ion-icon>
+    <ion-button slot="end" fill="clear" color="dark" (click)="nextPressed()">
+      {{page=='GROUP_DETAILS'? 'Next':'Save'}} <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- <app-group-details></app-group-details> -->
-  <app-add-participants></app-add-participants>
+  <app-group-details #groupDetails [groupName]="groupName" [description]="description" *ngIf='page=="GROUP_DETAILS"' ></app-group-details>
+  <app-add-participants #addParticipants *ngIf='page=="ADD_PARTICIPANTS"' ></app-add-participants>
 </ion-content>

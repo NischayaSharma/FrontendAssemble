@@ -28,6 +28,13 @@
 ion-item {
     --background: transparent;
 }
+
 ion-button {
     text-transform: capitalize !important;
+}
+
+.toast-css {
+    --color: var(--ion-color-primary);
+    --background: var(--ion-color-light);
+    text-align: center;
 }

@@ -11,4 +11,8 @@ export class AddParticipantsComponent implements OnInit {
 
   ngOnInit() {}
 
+  isValid() {
+    return true;
+  }
+
 }

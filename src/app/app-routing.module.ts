@@ -3,12 +3,17 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'group',
     loadChildren: () => import('./pages/group/group.module').then( m => m.GroupPageModule)
   },
   {
+    path: 'home',
+    loadChildren: () => import('./pages/group/group.module').then(m => m.GroupPageModule)
+  },
+
+  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'group',
     pathMatch: 'full'
   },
   {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-group-details',
@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupDetailsComponent implements OnInit {
 
-  groupName: string = "";
-  description: string = "";
+  @Input() groupName: string = "";
+  @Input() description: string = "";
 
   constructor() { }
 
   ngOnInit() {}
+
+  isValid() {
+    return this.groupName.length > 0 && this.description.length > 0;
+  }
 
 }
