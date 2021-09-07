@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddParticipantsComponent } from 'src/app/components/addGroup/add-participants/add-participants.component';
 
+import { AddParticipantsComponent } from 'src/app/components/addGroup/add-participants/add-participants.component';
 import { GroupDetailsComponent } from 'src/app/components/addGroup/group-details/group-details.component';
+
 import { UtilService } from 'src/app/services/util.service';
 
 @Component({

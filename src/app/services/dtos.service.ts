@@ -23,3 +23,34 @@ export interface Activities {
   id: string,
   title: string,
 }
+
+/* 
+Users
+Groups:
+  id: string
+  title: string
+  subtitle: string
+
+Rooms:
+  id: string
+  title: string
+  GroupId: string
+
+Activities:
+  id: string
+  title: string
+  RoomId: string
+
+
+RoomParticipants:
+  id: string
+  RoomId: string
+  UserId: string
+  IsAdmin: boolean
+
+GroupParticipants:
+  id: string
+  GroupId: string
+  UserId: string
+  IsAdmin: boolean
+*/
