@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'add-group',
     loadChildren: () => import('./pages/add-group/add-group.module').then( m => m.AddGroupPageModule)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
 ];
 
 @NgModule({

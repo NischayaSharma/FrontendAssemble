@@ -24,8 +24,10 @@
     "@capacitor/haptics": "1.0.3",
     "@capacitor/keyboard": "1.0.3",
     "@capacitor/status-bar": "1.0.3",
+    "@ionic-native/fcm": "^5.36.0",
     "@ionic/angular": "^5.5.2",
     "rxjs": "~6.6.0",
+    "socket.io-client": "^4.2.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
@@ -48,7 +50,10 @@
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
     "cordova-android": "^9.1.0",
+    "cordova-plugin-androidx": "^3.0.0",
+    "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-fcm-with-dependecy-updated": "^7.8.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^4.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
@@ -80,7 +85,16 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-fcm-with-dependecy-updated": {
+        "ANDROID_DEFAULT_NOTIFICATION_ICON": "@mipmap/ic_launcher",
+        "ANDROID_FCM_VERSION": "21.0.0",
+        "ANDROID_FIREBASE_BOM_VERSION": "26.0.0",
+        "ANDROID_GOOGLE_SERVICES_VERSION": "4.3.4",
+        "ANDROID_GRADLE_TOOLS_VERSION": "4.1.0"
+      },
+      "cordova-plugin-androidx-adapter": {},
+      "cordova-plugin-androidx": {}
     },
     "platforms": [
       "android"

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/User/user.service';
 
 @Component({
   selector: 'app-add-participants',
@@ -7,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddParticipantsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private user:UserService
+  ) { }
+  usernameToSearch:string=''
   ngOnInit() {}
 
   isValid() {
     return true;
+  }
+
+  search(){
+    console.log("Search====>",this.usernameToSearch)
+    this.user.getUserByUsername(this.usernameToSearch).then(res=>{
+      console.log(res.data)
+    })
   }
 
 }

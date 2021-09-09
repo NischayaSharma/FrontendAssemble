@@ -11,6 +11,6 @@
 </ion-header>
 
 <ion-content>
-  <app-group-details #groupDetails [groupName]="groupName" [description]="description" *ngIf='page=="GROUP_DETAILS"' ></app-group-details>
+  <app-group-details #groupDetails [groupName]="group.Name" [description]="group.Description" *ngIf='page=="GROUP_DETAILS"' ></app-group-details>
   <app-add-participants #addParticipants *ngIf='page=="ADD_PARTICIPANTS"' ></app-add-participants>
 </ion-content>

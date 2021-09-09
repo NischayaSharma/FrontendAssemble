@@ -1,1 +1,7 @@
-<ion-searchbar showCancelButton="focus"></ion-searchbar>
+<ion-searchbar placeholder="Search" 
+            [(ngModel)]="usernameToSearch" 
+            showCancelButton="focus" 
+            (ionChange)="search()" 
+            (ngModelChange)="usernameToSearch = $event.toLocaleLowerCase()"
+            >
+</ion-searchbar>

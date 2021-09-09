@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "135554715939",
+    "project_id": "assemble-a01b3",
+    "storage_bucket": "assemble-a01b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135554715939:android:4c6465b9bcf6f57dcb3c96",
+        "android_client_info": {
+          "package_name": "com.vanity.assemble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135554715939-81u0kc6e06ldpgg47qr8ed8torv2qmlj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3sw4g3LjxC_5ZJAw1LJ--43h88vp_GkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135554715939-81u0kc6e06ldpgg47qr8ed8torv2qmlj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -12,14 +12,18 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <div class="groups" *ngFor="let group of groups">
-    <div class="group" (click)="openRoom(group.id)">
-      <!-- Image Here  -->
-      <div class="text">
-        <p class="title">{{group.title}}</p>
-        <p class="subtitle">{{group.subtitle}}</p>
+  <div class="groups" *ngFor="let participantGroup of participantGroups">
+    <ion-item>
+      <div class="group" (click)="openRoom(participantGroup.Id)">
+        <!-- Image Here  -->
+        <div class="colorBox">
+        </div>
+        <div class="text">
+          <p class="title">{{participantGroup.Group.Name}}</p>
+          <p class="subtitle">{{participantGroup.Group.Description}}</p>
+        </div>
       </div>
-    </div>
+    </ion-item>
   </div>
   
 </ion-content>

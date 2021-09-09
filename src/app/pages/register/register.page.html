@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Username</ion-label>
+    <ion-input type="text" [(ngModel)]="username" (ngModelChange)="username = $event.toLocaleLowerCase()"></ion-input>
+    <p *ngIf="errorMssg!=''">{{errorMssg}}</p>
+  </ion-item>
+  <ion-button (click)="register()"></ion-button>
+  
+</ion-content>
