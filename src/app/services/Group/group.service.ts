@@ -47,7 +47,8 @@ export class GroupService {
   }
 
   async getUserGroups(UserId: string): Promise<any> {
-    var response = await this.GroupParticipantApi.find<AsmblGroupParticipantInterface>({ where: { UserId: UserId }, include: ['User', 'Group'] }).toPromise()
+    console.log("UserId===>",UserId)
+    var response = await this.GroupParticipantApi.find<AsmblGroupParticipantInterface>({ where: { UserId: "1" }, include: ['User', 'Group'] }).toPromise()
       .then(data => {
         return { success: true, data: data, message: "Groups Fetched Successfully" };
       }).catch(error => {

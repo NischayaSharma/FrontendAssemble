@@ -11,7 +11,27 @@ import { AsmblGroupInterface, AsmblGroupParticipantInterface } from 'src/app/sha
   styleUrls: ['group.page.scss'],
 })
 export class GroupPage implements OnInit {
-  participantGroups: AsmblGroupParticipantInterface[] = []
+  participantGroups: AsmblGroupParticipantInterface[] = [
+    {
+      "GroupId" : "613a0563e6a8fada07e4d98d",
+      "UserId" : "1",
+      "IsAdmin" : true,
+      "Group":{"Name":"SI23D","Description":"sdasd","Id":"121"}
+  },
+  {
+    "GroupId" : "613a0461e6a8fada07e4d98b",
+    "UserId" : "613a044fe6a8fada07e4d98a",
+    "IsAdmin" : true,
+    "Group":{"Name":"SID","Description":"sdasd","Id":"12"}
+},
+{
+  "GroupId" : "613a0461e6a8fada07e4d98b",
+  "UserId" : "613a044fe6a8fada07e4d98a",
+  "IsAdmin" : true,
+  "Group":{"Name":"SID","Description":"sdasd","Id":"12"}
+}
+
+  ]
 
   constructor(
     private router: Router,
@@ -28,16 +48,18 @@ export class GroupPage implements OnInit {
 
 
   getGroups() {
-    console.log(this.user.$currentUser)
-    var userId = this.user.$currentUser.Id
-    this.groupService.getUserGroups(userId).then(res => {
-      if (res.success) {
-        console.log("Groups ==> ",res.data);
-        this.participantGroups = res.data
-      } else {
-        this.participantGroups = []
-      }
-    })
+    // console.log(this.user.$currentUser)
+    // var userId = this.user.$currentUser.Id
+    // this.groupService.getUserGroups(userId).then(res => {
+    //   console.log("response===>",res)
+    //   if (res.success) {
+    //     console.log("Groups ==> ",res.data);
+    //     this.participantGroups = res.data
+    //   } else {
+    //     this.participantGroups = []
+    //   }
+    //   console.log("ParticipantGroup===>",this.participantGroups)
+    // })
   }
 
   openRoom(groupId: string) {

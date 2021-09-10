@@ -16,6 +16,16 @@
     margin-bottom:10px;
     border-radius:5px
   }
+
+  ion-content{
+    --background:black
+  }
+  
+  ion-toolbar{
+    --background: rgb(0, 0, 0);
+    color: white;
+    font-size: 30px;
+  }
   
   
   

@@ -1,29 +1,33 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" >
   <ion-toolbar>
-    <ion-title>
+    <ion-title style="font-size: 30px;">
       Assemble
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 10px;" >
     <ion-fab-button (click)="addGroup()" >
-      <ion-icon name="add"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <div class="groups" *ngFor="let participantGroup of participantGroups">
-    <ion-item>
-      <div class="group" (click)="openRoom(participantGroup.Id)">
-        <!-- Image Here  -->
-        <div class="colorBox">
+  <div class="groupWrapper">
+    <div class="groups" 
+        *ngFor="let participantGroup of participantGroups;let i = index">
+      <!-- <ion-item> -->
+        <div class="group" (click)="openRoom(participantGroup.Id)">
+          <!-- Image Here  -->
+          <!-- <div class="colorBox"> </div> -->
+          <p class="backgroundText">{{participantGroup.Group.Name}}</p>
+          <div class="text">
+            <p class="title">{{participantGroup.Group.Name}}</p>
+            <p class="subtitle">{{participantGroup.Group.Description}}</p>
+          </div>
+
         </div>
-        <div class="text">
-          <p class="title">{{participantGroup.Group.Name}}</p>
-          <p class="subtitle">{{participantGroup.Group.Description}}</p>
-        </div>
-      </div>
-    </ion-item>
+      <!-- </ion-item> -->
+    </div>
   </div>
   
 </ion-content>
