@@ -1,4 +1,4 @@
-<ion-header [translucent]="true" >
+<ion-header>
   <ion-toolbar>
     <ion-title style="font-size: 30px;">
       Assemble
@@ -13,20 +13,14 @@
     </ion-fab-button>
   </ion-fab>
   <div class="groupWrapper">
-    <div class="groups" 
-        *ngFor="let participantGroup of participantGroups;let i = index">
-      <!-- <ion-item> -->
-        <div class="group" (click)="openRoom(participantGroup.Id)">
-          <!-- Image Here  -->
-          <!-- <div class="colorBox"> </div> -->
-          <p class="backgroundText">{{participantGroup.Group.Name}}</p>
+    <div class="groups" *ngFor="let grpParticipant of grpParticipants;let i = index">
+        <div class="group" (click)="openRoom(grpParticipant.Group.Id)">
+          <p class="backgroundText">{{grpParticipant.Group.Name}}</p>
           <div class="text">
-            <p class="title">{{participantGroup.Group.Name}}</p>
-            <p class="subtitle">{{participantGroup.Group.Description}}</p>
+            <p class="title">{{grpParticipant.Group.Name}}</p>
+            <p class="subtitle">{{grpParticipant.Group.Description}}</p>
           </div>
-
         </div>
-      <!-- </ion-item> -->
     </div>
   </div>
   

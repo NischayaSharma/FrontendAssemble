@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AsmblUserApi, AsmblUserInterface } from 'src/app/shared/sdk';
+import { ApiReturns } from '../dtos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class UserService {
 
   private currentUser: AsmblUserInterface;
 
-  async deviceIdExists(deviceId: string): Promise<any> {
+  async deviceIdExists(deviceId: string): Promise<ApiReturns<{ exists: boolean }>> {
     return await this.userApi.count({ DeviceId: deviceId }).toPromise()
       .then(result => {
         if (result.count > 0) {
@@ -25,7 +26,7 @@ export class UserService {
       });
   }
 
-  async usernameExists(username: string): Promise<any> {
+  async usernameExists(username: string): Promise<ApiReturns<{ exists: boolean }>> {
     return await this.userApi.count({ where: { Username: username } }).toPromise()
       .then(result => {
         if (result.count > 0) {
@@ -38,7 +39,7 @@ export class UserService {
       });
   }
 
-  async createUser(deviceId: string, username: string): Promise<any> {
+  async createUser(deviceId: string, username: string): Promise<ApiReturns<AsmblUserInterface | any>> {
     var deviceIdExists = await this.deviceIdExists(deviceId);
     if (!deviceIdExists.data.exists) {
       return await this.userApi.create<AsmblUserInterface>({ DeviceId: deviceId, Username: username.toLowerCase() }).toPromise()
@@ -52,7 +53,7 @@ export class UserService {
     }
   }
 
-  async getUserByDeviceId(deviceId: string): Promise<any> {
+  async getUserByDeviceId(deviceId: string): Promise<ApiReturns<AsmblUserInterface | any>> {
     return await this.userApi.findOne<AsmblUserInterface>({ where: { DeviceId: deviceId } }).toPromise()
       .then(result => {
         return { success: true, data: result, message: 'User found.' };
@@ -61,7 +62,7 @@ export class UserService {
       });
   }
 
-  async getUserByUsername(username: string): Promise<any> {
+  async getUserByUsername(username: string): Promise<ApiReturns<AsmblUserInterface | any>> {
     return await this.userApi.findOne<AsmblUserInterface>({ where: { Username: { like: username } } }).toPromise()
       .then(result => {
         return { success: true, data: result, message: 'User found.' };
@@ -70,7 +71,7 @@ export class UserService {
       });
   }
 
-  async getAllUsers(): Promise<any> {
+  async getAllUsers(): Promise<ApiReturns<AsmblUserInterface | any>> {
     return await this.userApi.find<AsmblUserInterface>({}).toPromise()
       .then(result => {
         return { success: true, data: result, message: 'Users found.' };
@@ -79,11 +80,13 @@ export class UserService {
       });
   }
 
-  async setUser(deviceId: string): Promise<any> {
+  async setUser(deviceId: string): Promise<ApiReturns<AsmblUserInterface | any>> {
     var user = await this.getUserByDeviceId(deviceId);
     if (user.success) {
       this.currentUser = user.data;
       return { success: true, data: this.currentUser, message: 'User set' };
+    } else {
+      return { success: false, data: user, message: 'Error in setting User' };
     }
   }
 

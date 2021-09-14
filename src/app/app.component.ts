@@ -28,14 +28,16 @@ export class AppComponent {
       if(deviceIdExists.success){
         if(deviceIdExists.data.exists){
           console.log("Redirecting to group")
-          await this.user.setUser(deviceId);
-          this.router.navigateByUrl('/group')
+          var setUser = await this.user.setUser(deviceId);
+          if(setUser.success){
+            this.router.navigateByUrl('/group')
+          }
         }else{
           console.log("Redirecting to register")
           this.router.navigate(['/register'])
         }
       } else {
-        console.log("ERROR =>", deviceIdExists);
+        console.log("ERROR ==>", deviceIdExists);
         navigator['app'].exitApp();
       }
     });

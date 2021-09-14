@@ -12,11 +12,6 @@ const routes: Routes = [
   },
 
   {
-    path: '',
-    redirectTo: 'group',
-    pathMatch: 'full'
-  },
-  {
     path: 'room',
     loadChildren: () => import('./pages/room/room.module').then( m => m.RoomPageModule)
   },
@@ -31,6 +26,10 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'add-room',
+    loadChildren: () => import('./pages/add-room/add-room.module').then( m => m.AddRoomPageModule)
   },
 ];
 

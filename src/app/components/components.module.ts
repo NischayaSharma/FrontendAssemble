@@ -4,7 +4,8 @@ import { NgModule } from "@angular/core";
 
 import { IonicModule } from "@ionic/angular";
 import { GroupDetailsComponent } from "./addGroup/group-details/group-details.component";
-import { AddParticipantsComponent } from "./addGroup/add-participants/add-participants.component";
+import { AddParticipantsComponent } from "./add-participants/add-participants.component";
+import { RoomDetailsComponent } from "./addRoom/room-details/room-details.component";
 
 @NgModule({
     imports: [
@@ -16,10 +17,12 @@ import { AddParticipantsComponent } from "./addGroup/add-participants/add-partic
     declarations: [
         AddParticipantsComponent,
         GroupDetailsComponent,
+        RoomDetailsComponent,
     ],
     exports: [
         AddParticipantsComponent,
         GroupDetailsComponent,
+        RoomDetailsComponent,
     ]
 })
 

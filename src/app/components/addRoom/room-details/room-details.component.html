@@ -1,0 +1,13 @@
+<ion-item>
+  <ion-label color="primary" position="stacked">Name</ion-label>
+  <ion-input color="light" type="text" [(ngModel)]="roomName"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label color="primary" position="stacked">Description</ion-label>
+  <ion-input color="light" type="text" [(ngModel)]="activity" (keypress.enter)="addActivity()"></ion-input>
+  <ion-icon color="primary" (click)="addActivity()" name="caret-forward-outline"></ion-icon>
+</ion-item>
+<ion-chip outline color="primary" mode="ios" *ngFor="let activityChip of activityList">
+  <ion-label>{{ activityChip }}</ion-label>
+  <ion-icon name="close-circle" (click)="deleteActivity(activity)"></ion-icon>
+</ion-chip>

@@ -24,6 +24,12 @@ export interface Activities {
   title: string,
 }
 
+export interface ApiReturns<T> {
+  success: boolean,
+  data: any | T,
+  message: string
+}
+
 /* 
 Users
 Groups:

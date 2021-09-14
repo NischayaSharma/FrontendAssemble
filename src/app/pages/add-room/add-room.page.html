@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-button slot="start" fill="clear" color="light" (click)="backPressed()">
+      <ion-icon name="chevron-back-outline"></ion-icon> Back
+    </ion-button>
+    <ion-title>Add Room</ion-title>
+    <ion-button slot="end" fill="clear" color="light" (click)="nextPressed()">
+      {{page=='ROOM_DETAILS'? 'Next':'Save'}} <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-room-details #roomDetails [roomName]="room.Name" [activityList]="room.ActivityList" *ngIf='page=="ROOM_DETAILS"'></app-room-details>
+  <app-add-participants #addParticipants *ngIf='page=="ADD_PARTICIPANTS"'></app-add-participants>
+</ion-content>

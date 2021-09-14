@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Activities, Rooms } from 'src/app/services/dtos.service';
+import { RoomService } from 'src/app/services/Room/room.service';
+import { AsmblRoomInterface } from 'src/app/shared/sdk';
 
 @Component({
   selector: 'app-room',
@@ -10,32 +12,35 @@ import { Activities, Rooms } from 'src/app/services/dtos.service';
 export class RoomPage implements OnInit {
 
   groupId: string = "";
-  rooms: Rooms[] = [
-    {
-      "id": '1',
-      "title": 'Room 1'
-    },
-    {
-      "id": '2',
-      "title": 'Room 2'
-    },
-    {
-      "id": '3',
-      "title": 'Room 3'
-    }
-  ]
+  rooms: AsmblRoomInterface[] = []
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private room:RoomService
   ) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
       console.log(params);
       this.groupId = params.groupId;
+      this.getAllRooms()
     });
   }
 
+  addRoom() {
+    // Add Group
+    this.router.navigate(['/add-room']);
+  }
+
+  getAllRooms(){
+    this.room.getAllRoomsByGroupId(this.groupId).then(res=>{
+      console.log(res)
+      if(res.success){
+        this.rooms=res.data
+      }
+    })
+  }
   openActivity(roomId:string) {
     this.router.navigate(['/activity'], { queryParams: { roomId: roomId  } });
   }

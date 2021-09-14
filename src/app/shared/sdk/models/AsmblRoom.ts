@@ -8,6 +8,7 @@ export interface AsmblRoomInterface {
   "Id"?: string;
   "Name"?: string;
   "GroupId"?: string;
+  "ActivityList"?: Array<any>;
   Group?: AsmblGroup;
 }
 
@@ -15,6 +16,7 @@ export class AsmblRoom implements AsmblRoomInterface {
   "Id": string;
   "Name": string;
   "GroupId": string;
+  "ActivityList": Array<any>;
   Group: AsmblGroup;
   constructor(data?: AsmblRoomInterface) {
     Object.assign(this, data);
@@ -60,6 +62,10 @@ export class AsmblRoom implements AsmblRoomInterface {
         "GroupId": {
           name: 'GroupId',
           type: 'string'
+        },
+        "ActivityList": {
+          name: 'ActivityList',
+          type: 'Array&lt;any&gt;'
         },
       },
       relations: {

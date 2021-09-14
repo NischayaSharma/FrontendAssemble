@@ -1,16 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title style="font-size: 30px;">
-    Room
-  </ion-title>
+    <ion-title style="font-size: 30px;">Room</ion-title>
+    <ion-button slot="end" (click)="addRoom()">Add Room</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="rooms" *ngFor="let room of rooms">
-    <div class="room" (click)="openActivity(room.id)" >
+    <div class="room" (click)="openActivity(room.Id)" >
       <div class="text">
-        <p class="title">{{room.title}}</p>
+        <p class="title">{{room.Name}}</p>
       </div>
     </div>
   </div>
