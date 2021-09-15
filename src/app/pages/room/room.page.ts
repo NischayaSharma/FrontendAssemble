@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Activities, Rooms } from 'src/app/services/dtos.service';
+
 import { RoomService } from 'src/app/services/Room/room.service';
+
 import { AsmblRoomInterface } from 'src/app/shared/sdk';
 
 @Component({
@@ -17,6 +18,7 @@ export class RoomPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
+
     private room:RoomService
   ) { }
 
@@ -24,13 +26,16 @@ export class RoomPage implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       console.log(params);
       this.groupId = params.groupId;
-      this.getAllRooms()
     });
+  }
+
+  ionViewWillEnter() {
+    this.getAllRooms()
   }
 
   addRoom() {
     // Add Group
-    this.router.navigate(['/add-room']);
+    this.router.navigate(['/add-room'], { queryParams: { groupId: this.groupId } });
   }
 
   getAllRooms(){

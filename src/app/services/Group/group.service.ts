@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { AsmblGroupApi, AsmblGroupInterface, AsmblGroupParticipantApi, AsmblGroupParticipantInterface } from 'src/app/shared/sdk';
+
 import { ApiReturns } from '../dtos.service';
 
 @Injectable({
@@ -9,10 +10,8 @@ import { ApiReturns } from '../dtos.service';
 export class GroupService {
 
   constructor(
-    private http: HttpClient,
-
-    private GroupApi: AsmblGroupApi,
     private GroupParticipantApi: AsmblGroupParticipantApi,
+    private GroupApi: AsmblGroupApi,
   ) { }
 
   async addGroup(Group: AsmblGroupInterface, GroupParticipants: AsmblGroupParticipantInterface[]): Promise<ApiReturns<{ createGrp: AsmblGroupInterface | any, createGrpParticipants: AsmblGroupParticipantInterface | any } | any>> {

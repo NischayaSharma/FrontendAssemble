@@ -1,32 +1,81 @@
-#container {
-    text-align: center;
-  
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .room {
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    background-color:green;
-    margin-bottom:10px;
-    border-radius:5px
-  }
+.joinNowRooms {
+  white-space: nowrap;
+  padding-left: 5%;
+  overflow: auto;
+  .joinNowRoom {
+    display: inline-flex;
+    position: relative;
 
-  ion-content{
-    --background:black
+    background: var(--ion-color-primary);
+    opacity: 0.8;
+
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    border-radius: 10px;
+
+    height: 130px;
+    width: 35%;
+    .joinNowTitle {
+      color: rgba(var(--ion-color-medium-rgba));
+
+      overflow: hidden;
+
+      margin-left: 10px;
+      margin-top: 10px;
+      margin: 0px;
+
+      line-height: 22px;
+      max-height: 22px;
+      font-size: 22px;
+      max-width: 95%;
+    }
+    .joinNowNumber {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      
+      font-size: 20px;
+      
+      margin-right: 15px;
+    }
   }
-  
-  ion-toolbar{
-    --background: rgb(0, 0, 0);
-    color: white;
-    font-size: 30px;
-  }
-  
-  
-  
-  
+}
+
+.room {
+  // background: var(--ion-color-primary);
+  background: linear-gradient(150deg, (var(--ion-color-primary)) 60%, (var(--ion-color-primary-shade)) 100%);
+
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+
+  border-radius: 10px;
+
+  height: 15%;
+  width: 90%;
+}
+
+.title {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.heading {
+  opacity: 0.5;
+
+  font-weight: bold;
+  font-size: 28px;
+
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 5%;
+  margin: 0;
+
+}
+
+.activityList > p {
+  margin-top: 10px;
+  margin: 0;
+}

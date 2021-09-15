@@ -5,8 +5,8 @@ import { AddParticipantsComponent } from 'src/app/components/add-participants/ad
 import { GroupDetailsComponent } from 'src/app/components/addGroup/group-details/group-details.component';
 import { GroupService } from 'src/app/services/Group/group.service';
 import { UserService } from 'src/app/services/User/user.service';
-
 import { UtilService } from 'src/app/services/util.service';
+
 import { AsmblGroupInterface, AsmblGroupParticipantInterface } from 'src/app/shared/sdk';
 
 
@@ -27,9 +27,10 @@ export class AddGroupPage implements OnInit {
 
   constructor(
     private router: Router,
-    private user:UserService,
+
     private groupService: GroupService,
     private util: UtilService,
+    private user:UserService,
   ) { }
 
   ngOnInit() {

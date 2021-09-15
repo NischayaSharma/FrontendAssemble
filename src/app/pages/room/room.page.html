@@ -5,12 +5,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="rooms" *ngFor="let room of rooms">
-    <div class="room" (click)="openActivity(room.Id)" >
-      <div class="text">
-        <p class="title">{{room.Name}}</p>
-      </div>
+<ion-content class="container">
+  <p class="heading">Join Now</p>
+  <div class="joinNowRooms">
+    <div class="joinNowRoom" *ngFor="let room of rooms" (click)="openActivity(room.Id)" >
+        <p class="joinNowTitle" style="color: whitesmoke;">{{room.Name}}</p>
+        <p class="joinNowNumber">3</p>
     </div>
+  </div>
+  <p class="heading">Joined</p>
+  <!-- <div class="rooms"> -->
+    <div class="room" *ngFor="let room of rooms" (click)="openActivity(room.Id)" >
+        <p class="title" style="color: whitesmoke;">{{room.Name}}</p>
+        <div class="activityList">
+          <p>Activity, Activity, Activity, Activity, Activity</p>
+        </div>
+    <!-- </div> -->
   </div>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core';
-import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 import { UserService } from './services/User/user.service';
 import { UtilService } from './services/util.service';
 

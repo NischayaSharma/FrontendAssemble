@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { UserService } from 'src/app/services/User/user.service';
 import { UtilService } from 'src/app/services/util.service';
 
@@ -11,9 +12,10 @@ import { UtilService } from 'src/app/services/util.service';
 export class RegisterPage implements OnInit {
 
   constructor(
+    private router: Router,
+
     private user: UserService,
     private util: UtilService,
-    private router: Router
   ) { }
   username: string
   usernameRegex = `^[A-Za-z0-9_]*$`

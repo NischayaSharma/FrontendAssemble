@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { AddParticipantsComponent } from 'src/app/components/add-participants/add-participants.component';
 import { RoomDetailsComponent } from 'src/app/components/addRoom/room-details/room-details.component';
+
 import { RoomService } from 'src/app/services/Room/room.service';
 import { UserService } from 'src/app/services/User/user.service';
 import { UtilService } from 'src/app/services/util.service';
+
 import { AsmblRoomParticipantInterface, AsmblRoomInterface } from 'src/app/shared/sdk';
 
 @Component({
@@ -29,13 +32,22 @@ export class AddRoomPage implements OnInit {
   userId: string = ''
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private router: Router,
-    private user: UserService,
+
     private roomService: RoomService,
+    private user: UserService,
     private util: UtilService,
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe(params => {
+      console.log("Params ======>", params);
+      if (params['groupId']) {
+        this.room.GroupId = params['groupId'];
+      };
+    })
+
   }
 
   async nextPressed() {
