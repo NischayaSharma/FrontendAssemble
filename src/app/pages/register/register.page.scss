@@ -1,0 +1,39 @@
+p{
+    margin:0
+}
+
+.input{
+    color:var(--ion-color-primary-contrast);
+    border-bottom: 2px solid var(--ion-color-primary);
+    // border-radius: 10px;
+    font-size: 23px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.label{
+    color:var(--ion-color-primary-contrast);
+    font-size:25px;
+    opacity: 0.6;
+    // margin-bottom: 10px;
+}
+
+.container{
+    padding: 40px;
+    padding-top:20px;
+    // background: linear-gradient(180deg, rgba(var(--ion-color-primary-tint-rgba)) 0%, rgba(var(--ion-color-primary-rgba)) 38%, rgba(var(--ion-color-primary-shade-rgba)) 100%);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.button{
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    background-color: var(--ion-color-primary);
+    width: max-content;
+    border-radius: 10px;
+}
+

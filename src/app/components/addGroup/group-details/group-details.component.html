@@ -1,8 +1,19 @@
-<ion-item>
-  <ion-label position="stacked">Name</ion-label>
-  <ion-input type="text" [(ngModel)]="groupName"></ion-input>
+<!-- <ion-item>
+  <ion-label class="label" position="stacked">Name</ion-label>
+  <ion-input class="input" type="text" [(ngModel)]="groupName"></ion-input>
 </ion-item>
 <ion-item>
-  <ion-label position="stacked">Description</ion-label>
-  <ion-input type="text" [(ngModel)]="description"></ion-input>
-</ion-item>
+  <ion-label class="label" position="stacked">Description</ion-label>
+  <ion-input class="input" type="text" [(ngModel)]="description"></ion-input>
+</ion-item> -->
+<div class="container">
+  <p class="label">Name</p>
+  <ion-input autocapitalize=words placeholder="ex: Class" class="input" type="text" [(ngModel)]="groupName"></ion-input>
+  <p class="label">Description</p>
+  <ion-textarea autocapitalize=words placeholder="ex: Room to rescue" class="input desc" type="text" [(ngModel)]="description"></ion-textarea>
+  <div class="avatars">
+    <div class="avatar">
+      <img src="" class="avatarImage" />
+    </div>
+  </div>
+</div>

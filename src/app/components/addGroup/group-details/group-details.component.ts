@@ -15,6 +15,8 @@ export class GroupDetailsComponent implements OnInit {
   ngOnInit() {}
 
   isValid() {
+    console.log("isValid")
+    console.log(this.groupName, this.description);
     return this.groupName.length > 0 && this.description.length > 0;
   }
 

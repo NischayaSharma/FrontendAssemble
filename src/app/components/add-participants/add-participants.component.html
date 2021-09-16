@@ -1,7 +1,10 @@
-<ion-searchbar placeholder="Search" 
-            [(ngModel)]="usernameToSearch" 
-            showCancelButton="focus" 
-            (ionChange)="search()" 
-            (ngModelChange)="usernameToSearch = $event.toLocaleLowerCase()"
-            >
-</ion-searchbar>
+<div class="container">
+    <ion-searchbar placeholder="Search" 
+                [(ngModel)]="usernameToSearch" 
+                showCancelButton="focus" 
+                (ionChange)="search()" 
+                class="searchBar"
+                (ngModelChange)="usernameToSearch = $event.toLocaleLowerCase()"
+                >
+    </ion-searchbar>
+</div>

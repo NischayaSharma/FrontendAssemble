@@ -21,7 +21,10 @@ export class AddGroupPage implements OnInit {
   @ViewChild('groupDetails') groupDetails: GroupDetailsComponent;
   @ViewChild('addParticipants') addParticipants: AddParticipantsComponent;
   page: string = "GROUP_DETAILS";
-  group: AsmblGroupInterface = {};
+  group: AsmblGroupInterface = {
+    Name: '',
+    Description: '',
+  };
   groupParticipants: AsmblGroupParticipantInterface[] = [];
   userId: string=''
 
@@ -38,6 +41,7 @@ export class AddGroupPage implements OnInit {
 
   async nextPressed() {
     if (this.page == "GROUP_DETAILS") {
+      console.log();
       // Check if group name and description is empty
       if (this.groupDetails.isValid()) {
         // Persist Grp Details
@@ -46,7 +50,8 @@ export class AddGroupPage implements OnInit {
         // Move on to add Participants
         this.page = "ADD_PARTICIPANTS"
       } else {
-        this.util.showToast("Please fill all the details", 'top');
+        console.log("Heree in toast")
+        this.util.showToast("Please fill all the details", 'bottom');
       }
     } else if (this.page == "ADD_PARTICIPANTS") {
       // Check if atleast one participant selected

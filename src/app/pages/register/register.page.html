@@ -4,12 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="stacked">Username</ion-label>
-    <ion-input type="text" [(ngModel)]="username" (ngModelChange)="username = $event.toLocaleLowerCase()"></ion-input>
-    <p *ngIf="errorMssg!=''">{{errorMssg}}</p>
-  </ion-item>
-  <ion-button (click)="register()"></ion-button>
+<ion-content >
+  <div class="container">
+    <p class="label">Username</p>
+  <ion-input autocapitalize=words 
+            placeholder="ex: Class" 
+            class="input" 
+            type="text" 
+            (ngModelChange)="username = $event.toLocaleLowerCase()"
+            [(ngModel)]="username">
+  </ion-input>
+    <!-- <ion-label position="stacked">Username</ion-label>
+    <ion-input type="text" [(ngModel)]="username" (ngModelChange)="username = $event.toLocaleLowerCase()"></ion-input> -->
+    <p style="color: red;margin-bottom: 10px;" *ngIf="errorMssg!=''">{{errorMssg}}</p>
+      <p (click)="register()" class="button">Dive in</p>
+  </div>
   
 </ion-content>

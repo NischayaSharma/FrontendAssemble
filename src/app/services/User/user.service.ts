@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { AsmblUserApi, AsmblUserInterface } from 'src/app/shared/sdk';
+import { AsmblUserApi, AsmblUserInterface } from '../../shared/sdk';
 
 import { ApiReturns } from '../dtos.service';
 
@@ -16,6 +16,7 @@ export class UserService {
   private currentUser: AsmblUserInterface;
 
   async deviceIdExists(deviceId: string): Promise<ApiReturns<{ exists: boolean }>> {
+    console.log("result==",deviceId)
     return await this.userApi.count({ DeviceId: deviceId }).toPromise()
       .then(result => {
         if (result.count > 0) {
