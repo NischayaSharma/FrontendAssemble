@@ -39,7 +39,7 @@ export class AppComponent {
         }
       } else {
         console.log("ERROR ==>", deviceIdExists);
-        navigator['app'].exitApp();
+        // navigator['app'].exitApp();
       }
     });
   }

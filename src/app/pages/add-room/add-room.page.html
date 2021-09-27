@@ -11,6 +11,6 @@
 </ion-header>
 
 <ion-content>
-  <app-room-details #roomDetails [roomName]="room.Name" [activityList]="room.ActivityList" *ngIf='page=="ROOM_DETAILS"'></app-room-details>
+  <app-room-details #roomDetails [roomName]="" [activityList]="" *ngIf='page=="ROOM_DETAILS"'></app-room-details>
   <app-add-participants #addParticipants *ngIf='page=="ADD_PARTICIPANTS"'></app-add-participants>
 </ion-content>

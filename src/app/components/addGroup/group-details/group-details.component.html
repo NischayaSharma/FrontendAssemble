@@ -7,13 +7,8 @@
   <ion-input class="input" type="text" [(ngModel)]="description"></ion-input>
 </ion-item> -->
 <div class="container">
-  <p class="label">Name</p>
-  <ion-input autocapitalize=words placeholder="ex: Class" class="input" type="text" [(ngModel)]="groupName"></ion-input>
+  <p class="label">Group Name</p>
+  <ion-input autocapitalize=words placeholder="eg.Family" class="input" type="text" [(ngModel)]="groupName"></ion-input>
   <p class="label">Description</p>
-  <ion-textarea autocapitalize=words placeholder="ex: Room to rescue" class="input desc" type="text" [(ngModel)]="description"></ion-textarea>
-  <div class="avatars">
-    <div class="avatar">
-      <img src="" class="avatarImage" />
-    </div>
-  </div>
+  <ion-textarea autocapitalize=words rows="5" placeholder="eg.Describe your group" class="input desc" type="text" [(ngModel)]="description"></ion-textarea>
 </div>

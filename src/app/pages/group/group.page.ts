@@ -26,8 +26,6 @@ export class GroupPage implements OnInit {
     this.getGroups()
   }
 
-
-
   getGroups() {
     console.log(this.user.$currentUser)
     var userId = this.user.$currentUser.Id
@@ -46,12 +44,10 @@ export class GroupPage implements OnInit {
 
   openRoom(groupId: string) {
     console.log("GroupId===>",groupId);
-
+    this.groupService.$groupId = groupId;
     // Open Room
     this.router.navigate(['/room'], { queryParams: { groupId: groupId } });
   }
-
-
 
   addGroup() {
     // Add Group

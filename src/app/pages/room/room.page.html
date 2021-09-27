@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title style="font-size: 30px;">Room</ion-title>
-    <ion-button slot="end" (click)="addRoom()">Add Room</ion-button>
+    <!-- <ion-button slot="end" >Add Room</ion-button> -->
   </ion-toolbar>
 </ion-header>
+
+<ion-fab vertical="top" horizontal="end">
+  <ion-fab-button class="addRoom" (click)="addRoom()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
 <ion-content class="container">
   <p class="heading">Join Now</p>
@@ -16,7 +22,7 @@
   <p class="heading">Joined</p>
   <!-- <div class="rooms"> -->
     <div class="room" *ngFor="let room of rooms" (click)="openActivity(room.Id)" >
-        <p class="title" style="color: whitesmoke;">{{room.Name}}</p>
+        <p class="title">{{room.Name}}</p>
         <div class="activityList">
           <p>Activity, Activity, Activity, Activity, Activity</p>
         </div>

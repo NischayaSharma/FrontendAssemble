@@ -13,7 +13,7 @@
     </ion-fab-button>
   </ion-fab>
   <div class="groupWrapper">
-    <div class="groups" *ngFor="let grpParticipant of grpParticipants;let i = index">
+    <div class="groups" *ngFor="let grpParticipant of grpParticipants">
         <div class="group" (click)="openRoom(grpParticipant.Group.Id)">
           <p class="backgroundText">{{grpParticipant.Group.Name}}</p>
           <div class="text">

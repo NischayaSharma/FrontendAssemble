@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GroupService } from 'src/app/services/Group/group.service';
 
 import { RoomService } from 'src/app/services/Room/room.service';
 
@@ -19,14 +20,13 @@ export class RoomPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
 
-    private room:RoomService
+    private room:RoomService,
+    private groupService: GroupService,
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(params => {
-      console.log(params);
-      this.groupId = params.groupId;
-    });
+    // this.groupId = this.groupService.$groupId;
+    this.groupId = 'AG-00000'
   }
 
   ionViewWillEnter() {
@@ -47,7 +47,8 @@ export class RoomPage implements OnInit {
     })
   }
   openActivity(roomId:string) {
-    this.router.navigate(['/activity'], { queryParams: { roomId: roomId  } });
+    console.log(roomId)
+    this.router.navigate(['/activity'], { queryParams: { roomId: roomId  } })
   }
 
 }

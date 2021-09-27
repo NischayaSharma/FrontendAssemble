@@ -1,32 +1,31 @@
-.label{
-    color:var(--ion-color-primary-contrast);
-    font-size:25px;
-    opacity: 0.6;
-    // margin-bottom: 10px;
-}
-
-.container{
-    padding: 40px;
-    padding-top:20px;
-    // background: linear-gradient(180deg, rgba(var(--ion-color-primary-tint-rgba)) 0%, rgba(var(--ion-color-primary-rgba)) 38%, rgba(var(--ion-color-primary-shade-rgba)) 100%);
-    border-radius: 15px;
-}
-
 p{
     margin:0
 }
 
-.input{
-    color:var(--ion-color-primary-contrast);
-    border-bottom: 2px solid var(--ion-color-primary);
-    // border-radius: 10px;
-    font-size: 23px;
-    opacity: 0.8;
-    margin-bottom: 20px;
+.container{
+    padding: 15px;
+    width: 85%;
+    margin-top: 5%;
+    margin-left: 7.5%;
+    border-radius: 15px;
+    background-color: #171717;
+}
+.label{
+    color:#ffffff !important;
+    font-size: 20px;
+    margin-left: 20px;
 }
 
+.input{
+    font-size: 17px;
+    margin-left: 20px;
+    color: #ccc8c8;
+}
 
 .desc{
-    // height: 120px;
+    // height: 20vh;
 }
 
+.chipParent{
+    background-color: #dd01cb;
+}

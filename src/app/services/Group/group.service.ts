@@ -9,6 +9,8 @@ import { ApiReturns } from '../dtos.service';
 })
 export class GroupService {
 
+  private groupId:string="";
+
   constructor(
     private GroupParticipantApi: AsmblGroupParticipantApi,
     private GroupApi: AsmblGroupApi,
@@ -56,4 +58,15 @@ export class GroupService {
       });
     return response;
   }
+
+
+
+
+  public get $groupId(): string {
+    return this.groupId;
+  }
+  public set $groupId(value: string) {
+    this.groupId = value;
+  }
+
 }
